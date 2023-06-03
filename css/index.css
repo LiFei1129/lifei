@@ -1,0 +1,141 @@
+body{
+    display: flex;
+    font-size: 30px;
+    height: 100vh;
+    color: #fff;
+    /* 渐变背景 */
+    background-image: linear-gradient(45deg,#e66465, #9198e5, #7dc4cc, #a7bfe8);
+    background-size: 240%;
+    animation: bgmove 20s infinite;
+}
+@keyframes bgmove {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+div#header{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+nav{
+    background: #fff;
+    border-radius: 50px;
+    padding: 10px;
+    box-shadow: 0 25px 20px -20px rgba(0, 0,0, 0.4) ;
+}
+
+ul{
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 13px 35px;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #777;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 0.5s;
+}
+/* 这段代码是用来设置导航栏的样式的。
+display: inline-block表示将li元素设置为行内块级元素；
+cursor: pointer;表示设置鼠标悬停在li元素上时的光标样式为手型；
+position: relative;表示设置li元素的定位方式为相对定位；
+z-index: 2;表示设置li元素的堆叠顺序为2；
+transition: color 0.5s，表示设置li元素的颜色变化过渡效果为0.5秒。 */
+
+nav ul li::after{
+    content: '';
+    background: #eaa1ae;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+    opacity: 0;
+    transition: top 0.5s, opacity 0.5s;
+}
+
+/* 这段代码是用来给导航栏的每个列表项添加一个圆形背景的。
+它使用了伪元素::after来创建一个绝对定位的元素，并设置了它的背景颜色、大小、圆角等样式。
+通过设置top和opacity属性的过渡效果，可以实现鼠标悬停时背景颜色的渐变效果。 */
+
+
+nav ul li:hover{
+    color: #ffffff;
+}
+
+nav ul li:hover::after{
+    top: 50%;
+    opacity: 1;
+}
+
+.logo{
+    background-color: #050505;
+    width: 345px;
+    height: 100%;
+}
+
+img{
+    width: 95px;
+    height: 95px;
+    position: absolute;
+    top: 5px;
+    left: 25px;
+    border-radius: 50%;
+    box-shadow: 0 25px 20px -20px rgba(0, 0,0, 0.4) ;
+}
+
+span{
+    color: #22385a;
+    font-size: 40px;
+    position: absolute;
+    top: 19px;
+    left: 150px;
+}
+
+a{
+    text-decoration: none;
+    color: #777;
+}
+
+#footer {
+    background-color: #daeaf3;
+    color: #050505;
+    opacity: 0.6;
+    font-size: 15px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 61px;
+    top: 92vh;
+    padding: 9px;
+}

@@ -1,0 +1,239 @@
+body{
+    display: flex;
+    font-size: 30px;
+    height: 120vh;
+    margin: 0;
+    color: #fff;
+    /* 渐变背景 */
+    background-image: linear-gradient(45deg,#dbb5b5, #9198e5, #7dc4cc, #a7bfe8);
+    background-size: 240%;
+    animation: bgmove 20s infinite;
+}
+@keyframes bgmove {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+div#header{
+    background:  #ede8e8;
+    width: 100%;
+    height: 100px;
+    margin: 0;
+    display: block;
+    box-shadow: 0 25px 20px -20px rgba(0, 0,0, 0.4) ;
+}
+
+.logo {
+    width: 423px;
+    height: 100%;
+    position: absolute;
+    left: 4%;
+    top: -43%;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 95px;
+    height: 95px;
+    margin-right: 47px;
+    border-radius: 50%;
+    box-shadow: 0 25px 20px -20px rgba(0, 0,0, 0.4) ;
+}
+
+.logo span{
+    color: #22385a;
+    font-size: 40px;
+    position: relative;
+    bottom: 8px;
+    
+}
+
+
+nav{
+    background: #f7f3f3;
+    width: 730px;
+    height: 80px;
+    border-radius: 10px;
+    padding: 10px;
+    float: right;
+}
+
+ul{
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 0px;
+    text-decoration: none;
+    float: inline-end;
+}
+
+a{
+    text-decoration: none;
+    color: #777;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 13px 35px;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #777;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 0.5s;
+}
+nav ul li::after{
+    content: '';
+    background: #eaa1ae;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+    opacity: 0;
+    transition: top 0.5s, opacity 0.5s;
+}
+
+nav ul li:hover{
+    color: #ffffff;
+}
+
+nav ul li:hover::after{
+    top: 50%;
+    opacity: 1;
+}
+
+#main{
+    width: 90vh;
+    height: 84vh;
+    margin: auto ;
+    background-color: #FFFFFF;
+    background-attachment: fixed;
+    margin-top: 200px;
+    opacity: 0.9;  
+    border-radius: 1%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    box-shadow: 0 25px 20px -20px rgba(0, 0,0, 0.4) ;
+    background: url(../images/background3.jpg);
+    background-size: cover;
+    background-size: 100%;
+}
+
+.list {
+    color: #000; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+/* 这段代码是用来设置网页中的布局样式的。其中，display: flex; 表示使用弹性布局，
+flex-wrap: wrap; 表示当子元素超出容器宽度时自动换行，
+justify-content: space-evenly; 表示子元素在容器中水平分布，
+且每个子元素之间的间距相等 */
+
+.list .contact {
+    width: 35%;
+    padding: 5px;
+    margin-top: 24px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.list .contact img {
+    opacity: 0.8;
+    width: 220px;
+    border-radius: 10px;
+    box-shadow: 0 15px 15px #e7f1ff;
+    transition: transform 1s;
+    
+}
+
+.list img:hover{
+    opacity: 1;
+    transform: scale(1.2) rotate(0deg);
+}
+/* 这段代码是用来控制当鼠标悬停在图片上时，图片的效果的。
+它会使图片的透明度变为1，同时将其放大1.2倍并旋转0度。 */
+
+.list .contact p {
+    color: rgb(11, 11, 11);
+    line-height: 30px;
+    font-family: SimSun;
+    font-size: 24px;
+    padding: 8px;
+}
+
+form {
+    display: table;
+    position: absolute;
+    left: 60px;
+    padding: 10px;
+    border: dotted #777;
+}
+
+form textarea {
+    width: 436px;
+    height: 108px;
+}
+
+.tableRow {
+	display: table-row;
+    font-size: 15px;
+    color: #000;
+}
+
+.tableRow p {
+	display: table-cell;
+	vertical-align: top;
+	padding: 3px;
+}
+.tableRow p:first-child {
+	text-align: right;
+}
+p.heading {
+	font-weight: bold;
+}
+
+.tableRow p input[type="submit"] {
+    width: 84px;
+    height: 26px;
+    color: #fff;
+    background-color: #67a8c8;
+    border: 0;
+    font: 17px "黑体";
+    text-align: center;
+    border-radius: 5px;
+}
+
+#footer {
+    background-color: #daeaf3;
+    color: #777;
+    opacity: 0.8;  
+    font-size: 15px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 40px;
+    top: 113vh;
+    padding: 10px;
+}
